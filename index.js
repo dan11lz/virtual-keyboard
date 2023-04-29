@@ -1,31 +1,82 @@
-export default function set(el, classNames, child, parent, ...dataAttr) {
-  const unit = document.createElement(el);
-  if (classNames) unit.classList.add(...classNames.split(' '));
+import Keyboard from './keyboard.js';
 
-  if (child) {
-    if (child && Array.isArray(child)) {
-      child.forEach((e) => unit.append(e));
-    } else if (typeof child === 'string') {
-      unit.innerHTML = child;
-    } else {
-      unit.append(child);
-    }
-  }
+const layout = [
+  [
+    'Backquote',
+    'Digit1',
+    'Digit2',
+    'Digit3',
+    'Digit4',
+    'Digit5',
+    'Digit6',
+    'Digit7',
+    'Digit8',
+    'Digit9',
+    'Digit0',
+    'Minus',
+    'Equal',
+    'Backspace',
+  ],
+  [
+    'Tab',
+    'KeyQ',
+    'KeyW',
+    'KeyE',
+    'KeyR',
+    'KeyT',
+    'KeyY',
+    'KeyU',
+    'KeyI',
+    'KeyO',
+    'KeyP',
+    'BracketLeft',
+    'BracketRight',
+    'BackSlash',
+    'Delete',
+  ],
+  [
+    'CapsLock',
+    'KeyA',
+    'KeyS',
+    'KeyD',
+    'KeyF',
+    'KeyG',
+    'KeyH',
+    'KeyJ',
+    'KeyK',
+    'KeyL',
+    'Semicolon',
+    'Quote',
+    'Enter',
+  ],
+  [
+    'ShiftLeft',
+    'KeyZ',
+    'KeyX',
+    'KeyC',
+    'KeyV',
+    'KeyB',
+    'KeyN',
+    'KeyM',
+    'Comma',
+    'Point',
+    'Slash',
+    'ArrowUp',
+    'ShiftRight',
+  ],
+  [
+    'ControlLeft',
+    'MetaLeft',
+    'AltLeft',
+    'Space',
+    'AltRight',
+    'ArrowLeft',
+    'ArrowDown',
+    'ArrowRight',
+    'ControlRight',
+  ],
+];
 
-  if (parent) {
-    parent.append(unit);
-  }
+const lang = localStorage.getItem('lang') || 'eng';
 
-  if (dataAttr.length) {
-    dataAttr.forEach(([attrName, attrValue]) => {
-      if (
-        attrName.match(/value|id|placeholder|cols|rows|autocorrect|spellcheck/)
-      ) {
-        unit.setAttribute(attrName, attrValue);
-      } else {
-        unit.dataset[attrName] = attrValue;
-      }
-    });
-  }
-  return unit;
-}
+new Keyboard(layout).init().generateKeys(lang);

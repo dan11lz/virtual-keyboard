@@ -257,12 +257,12 @@ export default [
   {
     name: 'Comma',
     lower: ',',
-    upper: '<',
+    upper: '&#8249;',
   },
   {
     name: 'Point',
     lower: '.',
-    upper: '>',
+    upper: '&#8250;',
   },
   {
     name: 'Slash',
