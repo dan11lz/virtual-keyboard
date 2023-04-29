@@ -2,7 +2,7 @@ import eng from './engKeysKit.js';
 import ru from './ruKeysKit.js';
 import set from './keys.js';
 
-const main = set('main', 'main', [set('h1', 'title', 'Virtual Keyaboard')]);
+const main = set('main', 'main', [set('h1', 'title', 'Virtual Keyboard')]);
 
 const btnKeys = [];
 

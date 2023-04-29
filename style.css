@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 html {
   box-sizing: border-box;
@@ -21,6 +22,13 @@ body {
 h1 {
   text-align: center;
   padding: 10px 0;
+  font-family: 'Rubik Mono One';
+  font-size: 32px;
+  text-shadow: 0px 0px 30px rgba(0, 34, 255, 1),
+    0px 0px 30px rgba(0, 34, 255, 1);
+  -webkit-text-stroke: 0.1px #ffffff;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 3px;
 }
 
 .main {
